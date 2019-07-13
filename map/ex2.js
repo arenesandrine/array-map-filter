@@ -41,11 +41,17 @@ En sortie: [
 ]
 
  */
-
-function getFoodCategories(foods) {
-}
-
-
+	function getFoodCategories(foods) {  // on appellera les objets ici "foods"
+	  const categories = foods.map(function(foodte) {
+		if (foodte.isVegetarian == true){
+			return foodte.food  + ' is suitable for vegetarians';
+	    }
+		else {
+			return foodte.food  + ' is not suitable for vegetarians';
+		}
+	  });
+	  return categories;
+	}
 
 // Ne pas modifier l'export
 module.exports = getFoodCategories;

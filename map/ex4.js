@@ -50,11 +50,23 @@ Tableau de sortie correspondant (toFixed transforme les nombres en chaînes)
   }
 ]
 */
-
-function getCirclesProperties(radiuses) {
+function getCirclesProperties(radiuses){
+	
+	const circlesProperties = radiuses.map(function(radius) {
+		var circum = 2 * Math.PI * radius;
+		var surf = Math.PI * radius * radius;
+	    return {
+	    	 
+	        radius: radius,
+	        circumference : circum.toFixed(3),
+	        surface : surf.toFixed(3)
+	    	 }
+	   
+	   
+	 }); 
+	return circlesProperties;
 }
-
-
-
-// Ne pas modifier l'export
-module.exports = getCirclesProperties;
+	
+	
+	// Ne pas modifier l'export
+	module.exports = getCirclesProperties;
